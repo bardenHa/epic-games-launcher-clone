@@ -10,18 +10,20 @@ module.exports = {
     'next',
     'next/core-web-vitals',
     'plugin:@typescript-eslint/recommended',
+    'plugin:storybook/recommended',
   ],
   rules: {
     'no-unused-vars': 'off',
     'no-console': 'warn',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
-
     'react/display-name': 'off',
     'react/jsx-curly-brace-presence': [
       'warn',
-      { props: 'never', children: 'never' },
+      {
+        props: 'never',
+        children: 'never',
+      },
     ],
-
     //#region  //*=========== Unused Import ===========
     '@typescript-eslint/no-unused-vars': 'off',
     'unused-imports/no-unused-imports': 'warn',
@@ -35,7 +37,6 @@ module.exports = {
       },
     ],
     //#endregion  //*======== Unused Import ===========
-
     //#region  //*=========== Import Sort ===========
     'simple-import-sort/exports': 'warn',
     'simple-import-sort/imports': [
@@ -43,14 +44,10 @@ module.exports = {
       {
         groups: [
           // ext library & side effect imports
-          ['^@?\\w', '^\\u0000'],
-          // {s}css files
-          ['^.+\\.s?css$'],
-          // components
-          ['^@/components', '^@/container'],
-          // Other imports
-          ['^@/'],
-          // relative paths up until 3 level
+          ['^@?\\w', '^\\u0000'], // {s}css files
+          ['^.+\\.s?css$'], // components
+          ['^@/components', '^@/container'], // Other imports
+          ['^@/'], // relative paths up until 3 level
           [
             '^\\./?$',
             '^\\.(?!/?$)',
@@ -65,8 +62,7 @@ module.exports = {
           ['^'],
         ],
       },
-    ],
-    //#endregion  //*======== Import Sort ===========
+    ], //#endregion  //*======== Import Sort ===========
   },
   globals: {
     React: true,
