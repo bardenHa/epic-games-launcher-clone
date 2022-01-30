@@ -25,6 +25,9 @@ module.exports = {
           500: '#0074e4',
         },
       },
+      margin: {
+        0.25: '0.0625rem',
+      },
     },
   },
   plugins: [],

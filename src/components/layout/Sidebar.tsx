@@ -1,4 +1,5 @@
 import Button from '../buttons/Button'
+import NavigationButton from '../buttons/NavigationButton'
 
 import EpicGamesLogo from '~/svg/EpicGamesLogo.svg'
 
@@ -11,13 +12,15 @@ const Sidebar: React.FunctionComponent = () => {
       <div className="flex items-center justify-center h-20 text-4xl fill-primary-150">
         <EpicGamesLogo />
       </div>
-      <Button>Store</Button>
-      <Button>Library</Button>
-      <Button>Unreal Engine</Button>
+      <div className="flex flex-col space-y-0.5">
+        <NavigationButton active={true}>Store</NavigationButton>
+        <NavigationButton>Library</NavigationButton>
+        <NavigationButton>Unreal Engine</NavigationButton>
+      </div>
       <h3 className="mt-6">Quick Launch</h3>
-      <Button>Store</Button>
-      <Button>Library</Button>
-      <Button>Unreal Engine</Button>
+      <Button className="py-4 rounded-xl">Store</Button>
+      <Button className="py-4 rounded-xl">Library</Button>
+      <Button className="py-4 rounded-xl">Unreal Engine</Button>
     </nav>
   )
 }
