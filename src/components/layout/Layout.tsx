@@ -9,7 +9,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <Sidebar />
       <div className="w-full">
         <Header />
-        {children}
+        <div className="mt-20">{children}</div>
       </div>
     </div>
   )
