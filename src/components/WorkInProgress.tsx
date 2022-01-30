@@ -1,7 +1,7 @@
 const WorkInProgress: React.FunctionComponent = () => {
   return (
-    <main className="w-full flex justify-center layout items-center min-h-screen bg-red-500">
-      <h1 className="text-3xl font-mono md:text-5xl lg:text-7xl font-semibold text-white">
+    <main className="flex items-center justify-center w-full min-h-screen bg-red-500 layout">
+      <h1 className="text-3xl font-semibold text-white md:text-5xl lg:text-7xl">
         Work in progress 🚧
       </h1>
     </main>
