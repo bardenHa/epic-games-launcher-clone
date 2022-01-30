@@ -1,5 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { fontFamily } = require('tailwindcss/defaultTheme')
+const headerHeight = '7rem'
 
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
@@ -27,6 +28,10 @@ module.exports = {
       },
       margin: {
         0.25: '0.0625rem',
+        header: headerHeight,
+      },
+      height: {
+        header: headerHeight,
       },
     },
   },
