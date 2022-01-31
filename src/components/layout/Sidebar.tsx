@@ -3,6 +3,7 @@ import { AiFillTag } from 'react-icons/ai'
 import Button from '../buttons/Button'
 import NavigationButton from '../buttons/NavigationButton'
 
+import RocketLeague from '~/images/rocketleague.jpg'
 import EpicGamesLogo from '~/svg/EpicGamesLogo.svg'
 import LibraryIcon from '~/svg/LibraryIcon.svg'
 import UnrealEngineLogo from '~/svg/UnrealEngineLogo.svg'
@@ -24,6 +25,7 @@ const Sidebar: React.FunctionComponent = () => {
         <NavigationButton icon={<UnrealEngineLogo />}>
           Unreal Engine
         </NavigationButton>
+        <NavigationButton game={RocketLeague}>Rocket League®</NavigationButton>
       </div>
       <h3 className="mt-6">Quick Launch</h3>
       <Button className="py-4 rounded-xl">Store</Button>
