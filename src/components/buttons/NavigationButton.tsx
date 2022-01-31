@@ -50,7 +50,7 @@ const NavigationButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         type="button"
         className={clsxm(
-          'flex h-14 xl:h-16 2xl:h-20 text-xs xl:text-sm 2xl:text-base items-center duration-200 transition-colors rounded-xl px-5 font-semibold',
+          'inline-flex h-14 xl:h-16 2xl:h-20 text-xs xl:text-sm 2xl:text-base items-center duration-200 transition-colors rounded-xl px-5 font-semibold text-left',
           [
             variant === 'primary' && [
               'bg-primary-700 text-primary-200',
@@ -61,7 +61,9 @@ const NavigationButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
             ],
           ],
           active && ['bg-primary-800 text-primary-150', 'hover:bg-primary-500'],
-          game && ['pl-2.5 text-primary-150 font-normal'],
+          game && [
+            'pl-2.5 2xl:pl-3 h-16 2xl:h-20 text-primary-150 font-normal',
+          ],
           className
         )}
         {...rest}
