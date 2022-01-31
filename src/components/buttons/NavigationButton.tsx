@@ -35,7 +35,7 @@ const NavigationButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         type="button"
         className={clsxm(
-          'flex h-14 text-xs items-center rounded-xl px-5 font-semibold',
+          'flex h-14 xl:h-16 2xl:h-20 text-xs xl:text-sm 2xl:text-base items-center transition-colors rounded-xl px-5 font-semibold',
           [
             variant === 'primary' && [
               'bg-primary-700 text-primary-200',
@@ -50,7 +50,11 @@ const NavigationButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
         )}
         {...rest}
       >
-        {icon && <div className="mr-3 text-xl fill-primary-200">{icon}</div>}
+        {icon && (
+          <div className="mr-4 text-lg xl:text-xl xl:mr-5 2xl:mr-7 fill-primary-200">
+            {icon}
+          </div>
+        )}
         {isTimed && (
           <div
             className={clsxm(
