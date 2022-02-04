@@ -1,3 +1,5 @@
+import { MdOutlineKeyboardArrowLeft } from 'react-icons/md'
+
 import Button from '@/components/buttons/Button'
 import DropdownButton from '@/components/buttons/DropdownButton'
 import SearchBar from '@/components/SearchBar'
@@ -10,6 +12,7 @@ const Header: React.FunctionComponent = () => {
         className="flex items-center justify-between w-full h-full"
       >
         <div className="flex items-center flex-auto">
+          <MdOutlineKeyboardArrowLeft className="mx-1 text-2xl text-primary-200 active:text-primary-150" />
           <SearchBar
             placeholder="Search"
             className="hidden mx-2 w-44 md:flex"
@@ -17,15 +20,25 @@ const Header: React.FunctionComponent = () => {
           <DropdownButton variant="ghost" className="xl:hidden">
             Discover
           </DropdownButton>
-          <div className="hidden xl:flex">
-            <Button>Discover</Button>
-            <Button>Browse</Button>
-            <Button>News</Button>
+          <div className="hidden px-4 space-x-4 xl:flex">
+            <Button variant="ghost">Discover</Button>
+            <Button variant="ghost">Browse</Button>
+            <Button variant="ghost">News</Button>
           </div>
         </div>
         <div className="flex">
-          <Button>Wishlist</Button>
-          <Button>Cart</Button>
+          <Button
+            variant="ghost"
+            className="font-semibold text-primary-300 hover:text-primary-150"
+          >
+            Wishlist
+          </Button>
+          <Button
+            variant="ghost"
+            className="font-semibold text-primary-300 hover:text-primary-150"
+          >
+            Cart
+          </Button>
           <div>profile buttons</div>
         </div>
       </nav>

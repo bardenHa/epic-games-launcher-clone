@@ -40,7 +40,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         className={clsxm(
           'inline-flex items-center rounded p-2',
           'focus:border-primary-150',
-          'transition-colors duration-75',
+          'transition-colors duration-300',
           'text-xs font-medium xl:text-base xl:font-normal',
           [
             variant === 'primary' && [
