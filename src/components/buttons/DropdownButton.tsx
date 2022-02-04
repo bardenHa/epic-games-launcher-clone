@@ -1,5 +1,7 @@
-import React from 'react'
+import { motion } from 'framer-motion'
+import React, { useState } from 'react'
 import { ImSpinner2 } from 'react-icons/im'
+import { RiArrowUpSLine } from 'react-icons/ri'
 
 import clsxm from '@/lib/clsxm'
 
@@ -14,10 +16,20 @@ enum ButtonVariant {
 type ButtonProps = {
   /** Show loading spinner and disable button */
   isLoading?: boolean
-  isDarkBg?: boolean
   /** Button color variant */
   variant?: keyof typeof ButtonVariant
 } & React.ComponentPropsWithRef<'button'>
+
+const ArrowIcon = {
+  hover: {
+    rotate: 0,
+    transition: { duration: 0.15, type: 'tween', ease: 'easeInOut' },
+  },
+  rest: {
+    rotate: 180,
+    transition: { duration: 0.15, type: 'tween', ease: 'easeInOut' },
+  },
+}
 
 const DropdownButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
@@ -27,80 +39,81 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
       disabled: buttonDisabled,
       isLoading,
       variant = 'primary',
-      isDarkBg = false,
       ...rest
     },
     ref
   ) => {
     const disabled = isLoading || buttonDisabled
 
+    const [dropdownOpen, setDropdownOpen] = useState(false)
+
     return (
-      <button
-        ref={ref}
-        type="button"
-        disabled={disabled}
-        className={clsxm(
-          'inline-flex items-center rounded px-4 py-2 font-semibold',
-          'focus:outline-none focus-visible:ring focus-visible:ring-primary-500',
-          'shadow-sm',
-          'transition-colors duration-75',
-          [
-            variant === 'primary' && [
-              'bg-primary-500 text-white',
-              'border border-primary-600',
-              'hover:bg-primary-600 hover:text-white',
-              'active:bg-primary-500',
-              'disabled:bg-primary-400 disabled:hover:bg-primary-400',
-            ],
-            variant === 'outline' && [
-              'text-primary-500',
-              'border border-primary-500',
-              'hover:bg-primary-50 active:bg-primary-100 disabled:bg-primary-100',
-              isDarkBg &&
-                'hover:bg-gray-900 active:bg-gray-800 disabled:bg-gray-800',
-            ],
-            variant === 'ghost' && [
-              'text-primary-500',
-              'shadow-none',
-              'hover:bg-primary-50 active:bg-primary-100 disabled:bg-primary-100',
-              isDarkBg &&
-                'hover:bg-gray-900 active:bg-gray-800 disabled:bg-gray-800',
-            ],
-            variant === 'light' && [
-              'bg-white text-dark ',
-              'border border-gray-300',
-              'hover:bg-gray-100 hover:text-dark',
-              'active:bg-white/80 disabled:bg-gray-200',
-            ],
-            variant === 'dark' && [
-              'bg-gray-900 text-white',
-              'border border-gray-600',
-              'hover:bg-gray-800 active:bg-gray-700 disabled:bg-gray-700',
-            ],
-          ],
-          'disabled:cursor-not-allowed',
-          isLoading &&
-            'relative text-transparent transition-none hover:text-transparent disabled:cursor-wait',
-          className
-        )}
-        {...rest}
+      <motion.div
+        initial="rest"
+        animate={dropdownOpen ? 'hover' : 'rest'}
+        className="h-full"
       >
-        {isLoading && (
-          <div
-            className={clsxm(
-              'absolute h-4 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2',
-              {
-                'text-white': ['primary', 'dark'].includes(variant),
-                'text-black': ['light'].includes(variant),
-                'text-primary-500': ['outline', 'ghost'].includes(variant),
-              }
-            )}
-          >
-            <ImSpinner2 className="animate-spin" />
-          </div>
-        )}
-        {children}
-      </button>
+        <button
+          ref={ref}
+          type="button"
+          disabled={disabled}
+          onFocus={() => setDropdownOpen(true)}
+          onBlur={() => setDropdownOpen(false)}
+          className={clsxm(
+            'inline-flex items-center rounded p-2 pr-1',
+            'focus:border-primary-150',
+            'transition-colors duration-75',
+            'text-xs font-medium xl:text-base xl:font-normal',
+            [
+              variant === 'primary' && [
+                'bg-primary-500 text-primary-150',
+                'border border-primary-700',
+                'disabled:bg-primary-400 disabled:hover:bg-primary-400',
+              ],
+              variant === 'outline' && [
+                'text-primary-500',
+                'border border-primary-500',
+              ],
+              variant === 'ghost' && [
+                'text-primary-150',
+                'border border-primary-700',
+              ],
+              variant === 'light' && [
+                'bg-white text-dark ',
+                'border border-gray-300',
+              ],
+              variant === 'dark' && [
+                'bg-gray-900 text-white',
+                'border border-gray-600',
+              ],
+            ],
+            'disabled:cursor-not-allowed',
+            isLoading &&
+              'relative text-transparent transition-none hover:text-transparent disabled:cursor-wait',
+            className
+          )}
+          {...rest}
+        >
+          {isLoading && (
+            <div
+              className={clsxm(
+                'absolute h-4 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2',
+                {
+                  'text-white': ['primary', 'dark'].includes(variant),
+                  'text-black': ['light'].includes(variant),
+                  'text-primary-500': ['outline', 'ghost'].includes(variant),
+                }
+              )}
+            >
+              <ImSpinner2 className="animate-spin" />
+            </div>
+          )}
+          {children}
+          <motion.span className="pl-0.5 text-lg" variants={ArrowIcon}>
+            <RiArrowUpSLine />
+          </motion.span>
+        </button>
+      </motion.div>
     )
   }
 )
