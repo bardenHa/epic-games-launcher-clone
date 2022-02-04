@@ -29,13 +29,13 @@ const Header: React.FunctionComponent = () => {
         <div className="flex">
           <Button
             variant="ghost"
-            className="font-semibold text-primary-300 hover:text-primary-150"
+            className="font-semibold text-primary-300 hover:text-primary-150 focus:text-primary-150"
           >
             Wishlist
           </Button>
           <Button
             variant="ghost"
-            className="font-semibold text-primary-300 hover:text-primary-150"
+            className="font-semibold text-primary-300 hover:text-primary-150 focus:text-primary-150"
           >
             Cart
           </Button>
