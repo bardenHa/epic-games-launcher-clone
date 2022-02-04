@@ -4,9 +4,15 @@ import SearchBar from '@/components/SearchBar'
 const Header: React.FunctionComponent = () => {
   return (
     <header className="sticky top-0 w-full h-header bg-primary-700">
-      <nav aria-label="Secondary" className="flex justify-between w-full">
+      <nav
+        aria-label="Secondary"
+        className="flex items-center justify-between w-full h-full"
+      >
         <div className="flex flex-auto">
-          <SearchBar placeholder="Search" className="hidden md:flex" />
+          <SearchBar
+            placeholder="Search"
+            className="hidden mx-2 w-44 md:flex"
+          />
           <Button className="md:hidden">Discover</Button>
           <div className="hidden md:flex">
             <Button>Discover</Button>

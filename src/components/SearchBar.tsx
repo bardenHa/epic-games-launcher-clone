@@ -29,7 +29,7 @@ const SearchBar: React.FunctionComponent<SearchBarProps> = ({
   return (
     <div
       className={clsxm(
-        'flex flex-auto text-xs xl:text-sm 2xl:text-base h-max items-center rounded-full p-3 font-semibold',
+        'flex text-xs xl:text-sm 2xl:text-base h-max items-center rounded-full p-3',
         [
           variant === 'primary' && ['bg-primary-800 text-primary-200'],
           focus && 'bg-primary-500',
@@ -42,7 +42,7 @@ const SearchBar: React.FunctionComponent<SearchBarProps> = ({
         <FiSearch />
       </span>
       <input
-        className="flex-1 bg-transparent outline-none focus:bg-primary-500"
+        className="flex-1 w-full font-semibold bg-transparent outline-none focus:bg-primary-500"
         placeholder={placeholder}
         onFocus={() => setFocus(true)}
         onBlur={() => setFocus(false)}
