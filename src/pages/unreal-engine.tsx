@@ -5,7 +5,7 @@ import WorkInProgress from '@/components/WorkInProgress'
 const Store: NextPage = () => {
   return (
     <>
-      <WorkInProgress text="store" />
+      <WorkInProgress text="unreal engine" />
       <WorkInProgress />
     </>
   )
