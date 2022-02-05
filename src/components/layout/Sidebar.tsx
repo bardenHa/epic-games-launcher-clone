@@ -26,7 +26,7 @@ const Sidebar: React.FunctionComponent = () => {
           Unreal Engine
         </NavigationButton>
       </div>
-      <h3 className="pb-2 pl-3 mt-8 text-[0.55rem] tracking-widest leading-none uppercase">
+      <h3 className="pb-2 pl-3 mt-12 text-[0.55rem] tracking-widest leading-none uppercase">
         Quick Launch
       </h3>
       <NavigationButton game={RocketLeague}>Rocket League®</NavigationButton>
