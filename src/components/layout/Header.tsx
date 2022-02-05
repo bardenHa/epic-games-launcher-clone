@@ -26,20 +26,24 @@ const Header: React.FunctionComponent = () => {
             <Button variant="ghost">News</Button>
           </div>
         </div>
-        <div className="flex">
-          <Button
-            variant="ghost"
-            className="font-semibold text-primary-300 hover:text-primary-150 focus:text-primary-150"
-          >
-            Wishlist
-          </Button>
-          <Button
-            variant="ghost"
-            className="font-semibold text-primary-300 hover:text-primary-150 focus:text-primary-150"
-          >
-            Cart
-          </Button>
-          <div>profile buttons</div>
+        <div className="flex items-center">
+          <div className="px-6 space-x-2">
+            <Button
+              variant="ghost"
+              className="font-semibold text-primary-300 hover:text-primary-150 focus:text-primary-150"
+            >
+              Wishlist
+            </Button>
+            <Button
+              variant="ghost"
+              className="font-semibold text-primary-300 hover:text-primary-150 focus:text-primary-150"
+            >
+              Cart
+            </Button>
+          </div>
+          <div className="px-6 border-l border-primary-500">
+            profile buttons
+          </div>
         </div>
       </nav>
     </header>
