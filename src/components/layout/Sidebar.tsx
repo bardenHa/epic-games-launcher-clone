@@ -1,4 +1,8 @@
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { AiFillTag } from 'react-icons/ai'
+
+import * as ROUTES from '@/constant/routes'
 
 import NavigationButton from '../buttons/NavigationButton'
 
@@ -9,6 +13,8 @@ import LibraryIcon from '~/svg/LibraryIcon.svg'
 import UnrealEngineLogo from '~/svg/UnrealEngineLogo.svg'
 
 const Sidebar: React.FunctionComponent = () => {
+  const router = useRouter()
+
   return (
     <nav
       aria-label="Primary"
@@ -18,13 +24,36 @@ const Sidebar: React.FunctionComponent = () => {
         <EpicGamesLogo />
       </div>
       <div className="flex flex-col space-y-0.5">
-        <NavigationButton active={true} icon={<AiFillTag />}>
-          Store
-        </NavigationButton>
-        <NavigationButton icon={<LibraryIcon />}>Library</NavigationButton>
-        <NavigationButton icon={<UnrealEngineLogo />}>
-          Unreal Engine
-        </NavigationButton>
+        <Link href={ROUTES.STORE}>
+          <a>
+            <NavigationButton
+              active={router.pathname === ROUTES.STORE}
+              icon={<AiFillTag />}
+            >
+              Store
+            </NavigationButton>
+          </a>
+        </Link>
+        <Link href={ROUTES.LIBRARY}>
+          <a>
+            <NavigationButton
+              active={router.pathname === ROUTES.LIBRARY}
+              icon={<LibraryIcon />}
+            >
+              Library
+            </NavigationButton>
+          </a>
+        </Link>
+        <Link href={ROUTES.UNREAL_ENGINE}>
+          <a>
+            <NavigationButton
+              active={router.pathname === ROUTES.UNREAL_ENGINE}
+              icon={<UnrealEngineLogo />}
+            >
+              Unreal Engine
+            </NavigationButton>
+          </a>
+        </Link>
       </div>
       <h3 className="pb-2 pl-3 mt-12 text-[0.55rem] tracking-widest leading-none uppercase">
         Quick Launch
