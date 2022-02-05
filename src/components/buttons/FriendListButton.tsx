@@ -15,7 +15,7 @@ const FriendListButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
         type="button"
         disabled={disabled}
         className={clsxm(
-          'inline-flex items-center justify-center rounded-full p-3 bg-primary-800 border border-primary-700',
+          'inline-flex items-center justify-center rounded-full h-10 w-10 xl:w-12 xl:h-12 p-3 bg-primary-800 border border-primary-700',
           'focus:border-primary-150',
           'hover:bg-primary-500',
           'transition-colors duration-300',
