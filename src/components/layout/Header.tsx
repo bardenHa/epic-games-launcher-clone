@@ -2,6 +2,7 @@ import { MdOutlineKeyboardArrowLeft } from 'react-icons/md'
 
 import Button from '@/components/buttons/Button'
 import DropdownButton from '@/components/buttons/DropdownButton'
+import FriendListButton from '@/components/buttons/FriendListButton'
 import SearchBar from '@/components/SearchBar'
 
 const Header: React.FunctionComponent = () => {
@@ -41,8 +42,9 @@ const Header: React.FunctionComponent = () => {
               Cart
             </Button>
           </div>
-          <div className="px-6 border-l border-primary-500">
-            profile buttons
+          <div className="px-6 space-x-4 border-l border-primary-500">
+            <FriendListButton />
+            <FriendListButton />
           </div>
         </div>
       </nav>
