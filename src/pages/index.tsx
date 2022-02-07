@@ -1,13 +1,13 @@
 import type { NextPage } from 'next'
 
-import WorkInProgress from '@/components/WorkInProgress'
+import BannerHero from '@/components/BannerHero'
 
 const Store: NextPage = () => {
   return (
-    <>
-      <WorkInProgress text="store" />
-      <WorkInProgress />
-    </>
+    <main className="w-full bg-primary-700 min-h-main">
+      <BannerHero />
+      <h1 className="text-3xl font-semibold md:text-5xl lg:text-7xl">Store</h1>
+    </main>
   )
 }
 
