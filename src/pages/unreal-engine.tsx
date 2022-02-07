@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 
 import WorkInProgress from '@/components/WorkInProgress'
 
-const Store: NextPage = () => {
+const UnrealEngine: NextPage = () => {
   return (
     <>
       <WorkInProgress text="unreal engine" />
@@ -11,4 +11,4 @@ const Store: NextPage = () => {
   )
 }
 
-export default Store
+export default UnrealEngine

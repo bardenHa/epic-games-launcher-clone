@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 
 import WorkInProgress from '@/components/WorkInProgress'
 
-const Store: NextPage = () => {
+const Library: NextPage = () => {
   return (
     <>
       <WorkInProgress text="library" />
@@ -11,4 +11,4 @@ const Store: NextPage = () => {
   )
 }
 
-export default Store
+export default Library
