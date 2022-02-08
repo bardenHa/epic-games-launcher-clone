@@ -2,32 +2,36 @@ import type { NextPage } from 'next'
 
 import BannerHero from '@/components/BannerHero'
 
-import RocketLeague from '~/images/rocketleague.jpg'
+import DyingLight2Cover from '~/images/covers/dyinglight2.jpg'
+import EvilDeadCover from '~/images/covers/evildead.jpg'
+import SifuCover from '~/images/covers/sifu.jpg'
+import WarhammerCover from '~/images/covers/warhammer.jpg'
+import RocketLeagueCover from '~/images/rocketleague.jpg'
 
 const featuredGames = [
   {
     title: 'Lunar New Year Sales 2022',
-    image: RocketLeague,
+    image: RocketLeagueCover,
   },
   {
     title: 'Get Your Coupon',
-    image: RocketLeague,
+    image: RocketLeagueCover,
   },
   {
     title: 'Dying Light 2 Stay Human',
-    image: RocketLeague,
+    image: DyingLight2Cover,
   },
   {
     title: 'Sifu - EGS Exclusive',
-    image: RocketLeague,
+    image: SifuCover,
   },
   {
     title: 'Evil Dead: The Game',
-    image: RocketLeague,
+    image: EvilDeadCover,
   },
   {
     title: 'Total War: WARHAMMER III',
-    image: RocketLeague,
+    image: WarhammerCover,
   },
 ]
 
