@@ -26,7 +26,7 @@ const HeroButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         type="button"
         className={clsxm(
-          'inline-flex text-xs xl:text-sm 2xl:text-base items-center duration-200 transition-colors rounded-xl px-5 font-semibold text-left w-full',
+          'inline-flex overflow-hidden relative text-xs xl:text-sm 2xl:text-base items-center duration-200 transition-colors rounded-xl px-5 font-semibold text-left w-full',
           [
             variant === 'primary' && [
               'bg-primary-700 text-primary-200',
@@ -34,23 +34,44 @@ const HeroButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
               'hover:bg-primary-600',
             ],
           ],
-          active && ['bg-primary-800 text-primary-150', 'hover:bg-primary-500'],
+          active && ['bg-primary-600'],
           game && ['pl-2.5 xl:pl-4 2xl:pl-5 text-primary-150 font-normal'],
           className
         )}
         {...rest}
       >
-        {game && (
-          <div className="mr-3.5 overflow-hidden rounded-md w-7 md:w-8 xl:w-10 2xl:w-12 xl:mr-4 2xl:mr-5">
-            <Image
-              src={game}
-              alt="Quick launch game image"
-              layout="responsive"
-            />
-          </div>
-        )}
+        {active ? (
+          <>
+            {game && (
+              <div className="mr-3.5 z-10 overflow-hidden rounded-md w-7 md:w-8 xl:w-10 2xl:w-12 xl:mr-4 2xl:mr-5">
+                <Image
+                  src={game}
+                  alt="Quick launch game image"
+                  layout="responsive"
+                />
+              </div>
+            )}
+            <h6 className="z-10 whitespace-normal">{children}</h6>
+            <div
+              className="absolute left-0 h-full rounded-l-xl bg-primary-500 bg-clip-border"
+              style={{ width: '50%' }}
+            ></div>
+          </>
+        ) : (
+          <>
+            {game && (
+              <div className="mr-3.5 overflow-hidden rounded-md w-7 md:w-8 xl:w-10 2xl:w-12 xl:mr-4 2xl:mr-5">
+                <Image
+                  src={game}
+                  alt="Quick launch game image"
+                  layout="responsive"
+                />
+              </div>
+            )}
 
-        <h6 className="whitespace-normal">{children}</h6>
+            <h6 className="whitespace-normal">{children}</h6>
+          </>
+        )}
       </button>
     )
   }

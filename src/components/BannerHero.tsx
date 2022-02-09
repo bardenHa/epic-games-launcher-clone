@@ -7,6 +7,7 @@ import DylingLight2 from '~/images/banners/dyinglight2.jpg'
 interface featuredGame {
   title: string
   image: StaticImageData
+  active?: boolean
 }
 
 interface BannerHero {
@@ -28,6 +29,7 @@ const BannerHero: React.FunctionComponent<BannerHero> = ({ featuredGames }) => {
           <HeroButton
             key={index}
             game={game.image}
+            active={game.active}
             className="w-52 xl:w-60 2xl:w-72 h-1/6"
           >
             {game.title}
