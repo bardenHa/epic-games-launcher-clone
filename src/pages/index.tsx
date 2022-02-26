@@ -12,7 +12,6 @@ const featuredGames = [
   {
     title: 'Lunar New Year Sales 2022',
     image: RocketLeagueCover,
-    active: true,
   },
   {
     title: 'Get Your Coupon',

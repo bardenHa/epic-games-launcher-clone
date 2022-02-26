@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import React from 'react'
 
@@ -15,6 +16,17 @@ type ButtonProps = {
   /** Button game image */
   game: StaticImageData
 } & React.ComponentPropsWithRef<'button'>
+
+const activeButton = {
+  hover: {
+    width: '100%',
+    transition: { duration: 8, type: 'linear', ease: 'easeInOut' },
+  },
+  rest: {
+    width: 0,
+    transition: { duration: 8, type: 'linear', ease: 'easeInOut' },
+  },
+}
 
 const HeroButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
@@ -52,10 +64,12 @@ const HeroButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
               </div>
             )}
             <h6 className="z-10 whitespace-normal">{children}</h6>
-            <div
+            <motion.div
+              initial="rest"
+              animate="hover"
+              variants={activeButton}
               className="absolute left-0 h-full rounded-l-xl bg-primary-500 bg-clip-border"
-              style={{ width: '50%' }}
-            ></div>
+            ></motion.div>
           </>
         ) : (
           <>
