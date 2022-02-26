@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
+import Button from './buttons/Button'
 import HeroButton from './buttons/HeroButton'
 interface featuredGame {
   title: string
@@ -40,7 +41,7 @@ const BannerHero: React.FunctionComponent<BannerHero> = ({ featuredGames }) => {
   }
 
   useEffect(() => {
-    setRunning(true)
+    setRunning(false)
 
     return cleanup
   }, [])
@@ -96,9 +97,30 @@ const BannerImage: React.FunctionComponent<{
       variants={activeBannerImage}
       initial="rest"
       animate="active"
-      className="flex-auto overflow-hidden cursor-pointer h-min rounded-2xl"
+      className="relative flex-auto overflow-hidden cursor-pointer h-min rounded-2xl"
     >
       <Image src={image} alt="featured game banner" layout="responsive" />
+      <div className="absolute flex flex-col justify-end inset-8">
+        <div className="max-w-sm pr-8">
+          <h4 className="text-sm font-medium">NOW AVAILABLE</h4>
+          <p className="pt-1.5 font-semibold tracking-wide">
+            Embark on your path of revenge and master the devastating techniques
+            of Pak Mei Kung Fu.
+          </p>
+          <p className="pt-1.5 text-xs">
+            Starting at <span className="text-base font-semibold">£31.99</span>
+          </p>
+          <div className="pt-1.5 flex space-x-3">
+            <Button
+              variant="light"
+              className="items-center px-12 py-3 text-[0.7rem] border-0"
+            >
+              BUY NOW
+            </Button>
+            <button>Add to wishlist</button>
+          </div>
+        </div>
+      </div>
     </motion.div>
   </AnimatePresence>
 )
