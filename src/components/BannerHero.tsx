@@ -20,11 +20,15 @@ const BannerHero: React.FunctionComponent<BannerHero> = ({ featuredGames }) => {
   const [running, setRunning] = useState(false)
   const [activeRow, setActiveRow] = useState(0)
 
+  const startTimer = () => {
+    interval = setInterval(() => {
+      setActiveRow((activeRow) => (activeRow >= 5 ? 0 : activeRow + 1))
+    }, 8000)
+  }
+
   useEffect(() => {
     if (running) {
-      interval = setInterval(() => {
-        setActiveRow((activeRow) => (activeRow >= 5 ? 0 : activeRow + 1))
-      }, 8000)
+      startTimer()
     } else {
       clearInterval(Number(interval))
     }
@@ -41,6 +45,13 @@ const BannerHero: React.FunctionComponent<BannerHero> = ({ featuredGames }) => {
     return cleanup
   }, [])
 
+  const handleButtonClick = (index: number) => {
+    cleanup()
+    setRunning(true)
+    setActiveRow(index)
+    startTimer()
+  }
+
   return (
     <section className="flex lg:space-x-4 2xl:space-x-8 h-min">
       <div className="flex-auto overflow-hidden cursor-pointer h-min rounded-2xl">
@@ -49,6 +60,7 @@ const BannerHero: React.FunctionComponent<BannerHero> = ({ featuredGames }) => {
       <div className="flex-col flex-none hidden space-y-1 lg:flex">
         {featuredGames.map((game, index) => (
           <HeroButton
+            onClick={() => handleButtonClick(index)}
             key={index}
             game={game.image}
             active={index === activeRow}
