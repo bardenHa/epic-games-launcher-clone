@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
+import { AiOutlinePlusCircle } from 'react-icons/ai'
 
 import Button from './buttons/Button'
 import HeroButton from './buttons/HeroButton'
@@ -41,7 +42,7 @@ const BannerHero: React.FunctionComponent<BannerHero> = ({ featuredGames }) => {
   }
 
   useEffect(() => {
-    setRunning(false)
+    setRunning(true)
 
     return cleanup
   }, [])
@@ -56,7 +57,7 @@ const BannerHero: React.FunctionComponent<BannerHero> = ({ featuredGames }) => {
   return (
     <section className="flex lg:space-x-4 2xl:space-x-8 h-min">
       <div className="flex-auto overflow-hidden cursor-pointer h-min rounded-2xl">
-        <BannerImage key={activeRow} image={featuredGames[activeRow].banner} />
+        <BannerSlider key={activeRow} image={featuredGames[activeRow].banner} />
       </div>
       <div className="flex-col flex-none hidden space-y-1 lg:flex">
         {featuredGames.map((game, index) => (
@@ -88,7 +89,7 @@ const activeBannerImage = {
   },
 }
 
-const BannerImage: React.FunctionComponent<{
+const BannerSlider: React.FunctionComponent<{
   image: StaticImageData
 }> = ({ image }) => (
   <AnimatePresence>
@@ -102,22 +103,31 @@ const BannerImage: React.FunctionComponent<{
       <Image src={image} alt="featured game banner" layout="responsive" />
       <div className="absolute flex flex-col justify-end inset-8">
         <div className="max-w-sm pr-8">
-          <h4 className="text-sm font-medium">NOW AVAILABLE</h4>
-          <p className="pt-1.5 font-semibold tracking-wide">
+          <h4 className="text-xs font-medium">NOW AVAILABLE</h4>
+          <p className="pt-2 font-semibold tracking-wide">
             Embark on your path of revenge and master the devastating techniques
             of Pak Mei Kung Fu.
           </p>
-          <p className="pt-1.5 text-xs">
-            Starting at <span className="text-base font-semibold">£31.99</span>
+          <p className="pt-2 text-xs">
+            Starting at{' '}
+            <span className="text-base font-semibold align-text-top">
+              £31.99
+            </span>
           </p>
-          <div className="pt-1.5 flex space-x-3">
+          <div className="flex pt-2 space-x-3">
             <Button
               variant="light"
-              className="items-center px-12 py-3 text-[0.7rem] border-0"
+              className="items-center w-40 py-3 text-[0.7rem] border-0"
             >
               BUY NOW
             </Button>
-            <button>Add to wishlist</button>
+            <Button
+              variant="ghost"
+              className="w-40 py-3 text-[0.7rem] border-transparent"
+            >
+              <AiOutlinePlusCircle className="mr-1 text-2xl" />
+              Add to wishlist
+            </Button>
           </div>
         </div>
       </div>
