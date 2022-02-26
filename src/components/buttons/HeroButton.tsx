@@ -18,13 +18,13 @@ type ButtonProps = {
 } & React.ComponentPropsWithRef<'button'>
 
 const activeButton = {
-  hover: {
+  active: {
     width: '100%',
-    transition: { duration: 8, type: 'linear', ease: 'easeInOut' },
+    transition: { duration: 8, type: 'linear' },
   },
   rest: {
     width: 0,
-    transition: { duration: 8, type: 'linear', ease: 'easeInOut' },
+    transition: { duration: 8, type: 'linear' },
   },
 }
 
@@ -66,7 +66,7 @@ const HeroButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
             <h6 className="z-10 whitespace-normal">{children}</h6>
             <motion.div
               initial="rest"
-              animate="hover"
+              animate="active"
               variants={activeButton}
               className="absolute left-0 h-full rounded-l-xl bg-primary-500 bg-clip-border"
             ></motion.div>

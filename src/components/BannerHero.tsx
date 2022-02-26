@@ -1,13 +1,12 @@
+import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
 import HeroButton from './buttons/HeroButton'
-
-import DylingLight2 from '~/images/banners/dyinglight2.jpg'
-
 interface featuredGame {
   title: string
   image: StaticImageData
+  banner: StaticImageData
   active?: boolean
 }
 
@@ -20,13 +19,12 @@ let interval: ReturnType<typeof setTimeout> | null = null
 const BannerHero: React.FunctionComponent<BannerHero> = ({ featuredGames }) => {
   const [running, setRunning] = useState(false)
   const [activeRow, setActiveRow] = useState(0)
-  // const [progress, setProgress] = useState(0)
 
   useEffect(() => {
     if (running) {
       interval = setInterval(() => {
         setActiveRow((activeRow) => (activeRow >= 5 ? 0 : activeRow + 1))
-      }, 8500)
+      }, 8000)
     } else {
       clearInterval(Number(interval))
     }
@@ -46,11 +44,7 @@ const BannerHero: React.FunctionComponent<BannerHero> = ({ featuredGames }) => {
   return (
     <section className="flex lg:space-x-4 2xl:space-x-8 h-min">
       <div className="flex-auto overflow-hidden cursor-pointer h-min rounded-2xl">
-        <Image
-          src={DylingLight2}
-          alt="featured game banner"
-          layout="responsive"
-        />
+        <BannerImage key={activeRow} image={featuredGames[activeRow].banner} />
       </div>
       <div className="flex-col flex-none hidden space-y-1 lg:flex">
         {featuredGames.map((game, index) => (
@@ -67,5 +61,34 @@ const BannerHero: React.FunctionComponent<BannerHero> = ({ featuredGames }) => {
     </section>
   )
 }
+
+const activeBannerImage = {
+  active: {
+    x: 0,
+    opacity: 1,
+    transition: { duration: 0.35, type: 'tween', ease: 'easeInOut' },
+  },
+  rest: {
+    x: 900,
+    opacity: 0.1,
+    transition: { duration: 0.35, type: 'tween', ease: 'easeInOut' },
+  },
+}
+
+const BannerImage: React.FunctionComponent<{
+  image: StaticImageData
+}> = ({ image }) => (
+  <AnimatePresence>
+    <motion.div
+      key={image.src}
+      variants={activeBannerImage}
+      initial="rest"
+      animate="active"
+      className="flex-auto overflow-hidden cursor-pointer h-min rounded-2xl"
+    >
+      <Image src={image} alt="featured game banner" layout="responsive" />
+    </motion.div>
+  </AnimatePresence>
+)
 
 export default BannerHero
