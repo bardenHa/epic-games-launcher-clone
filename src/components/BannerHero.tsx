@@ -123,7 +123,7 @@ const BannerSlider: React.FunctionComponent<{
             </Button>
             <Button
               variant="ghost"
-              className="w-40 py-3 text-[0.7rem] border-transparent"
+              className="w-40 py-3 hover:bg-primary-100 hover:bg-opacity-10 text-[0.7rem] border-transparent"
             >
               <AiOutlinePlusCircle className="mr-1 text-2xl" />
               Add to wishlist
