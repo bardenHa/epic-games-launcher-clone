@@ -20,31 +20,49 @@ const featuredGames = [
     title: 'God of War',
     image: GodOfWarCover,
     banner: GodOfWarBanner,
+    price: 1.99,
+    description:
+      'Embark on your path of revenge and master the devastating techniques of Pak Mei Kung Fu.',
   },
   {
     title: 'Battlefront',
     image: BattlefrontTwoCover,
     banner: BattlefrontTwoBanner,
+    price: 31.99,
+    description:
+      'Embark on your path of revenge and master the devastating techniques of Pak Mei Kung Fu.',
   },
   {
     title: 'Dying Light 2 Stay Human',
     image: DyingLight2Cover,
     banner: DyingLight2Banner,
+    price: 31.99,
+    description:
+      'Embark on your path of revenge and master the devastating techniques of Pak Mei Kung Fu.',
   },
   {
     title: 'Sifu - EGS Exclusive',
     image: SifuCover,
     banner: SifuBanner,
+    price: 31.99,
+    description:
+      'Embark on your path of revenge and master the devastating techniques of Pak Mei Kung Fu.',
   },
   {
     title: 'Evil Dead: The Game',
     image: EvilDeadCover,
     banner: EvilDeadBanner,
+    price: 31.99,
+    description:
+      'Embark on your path of revenge and master the devastating techniques of Pak Mei Kung Fu.',
   },
   {
     title: 'Total War: WARHAMMER III',
     image: WarhammerCover,
     banner: WarhammerBanner,
+    price: 31.99,
+    description:
+      'Embark on your path of revenge and master the devastating techniques of Pak Mei Kung Fu.',
   },
 ]
 

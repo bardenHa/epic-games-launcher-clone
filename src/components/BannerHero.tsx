@@ -9,6 +9,8 @@ interface featuredGame {
   title: string
   image: StaticImageData
   banner: StaticImageData
+  price: number
+  description: string
   active?: boolean
 }
 
@@ -57,7 +59,12 @@ const BannerHero: React.FunctionComponent<BannerHero> = ({ featuredGames }) => {
   return (
     <section className="flex lg:space-x-4 2xl:space-x-8 h-min">
       <div className="flex-auto overflow-hidden cursor-pointer h-min rounded-2xl">
-        <BannerSlider key={activeRow} image={featuredGames[activeRow].banner} />
+        <BannerSlider
+          key={activeRow}
+          image={featuredGames[activeRow].banner}
+          price={featuredGames[activeRow].price}
+          description={featuredGames[activeRow].description}
+        />
       </div>
       <div className="flex-col flex-none hidden space-y-1 lg:flex">
         {featuredGames.map((game, index) => (
@@ -91,7 +98,9 @@ const activeBannerImage = {
 
 const BannerSlider: React.FunctionComponent<{
   image: StaticImageData
-}> = ({ image }) => (
+  price: number
+  description: string
+}> = ({ image, price, description }) => (
   <AnimatePresence>
     <motion.div
       key={image.src}
@@ -104,14 +113,11 @@ const BannerSlider: React.FunctionComponent<{
       <div className="absolute flex flex-col justify-end inset-8">
         <div className="max-w-sm pr-8">
           <h4 className="text-xs font-medium">NOW AVAILABLE</h4>
-          <p className="pt-2 font-semibold tracking-wide">
-            Embark on your path of revenge and master the devastating techniques
-            of Pak Mei Kung Fu.
-          </p>
+          <p className="pt-2 font-semibold tracking-wide">{description}</p>
           <p className="pt-2 text-xs">
             Starting at{' '}
             <span className="text-base font-semibold align-text-top">
-              £31.99
+              £{price}
             </span>
           </p>
           <div className="flex pt-2 space-x-3">
