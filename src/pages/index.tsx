@@ -20,25 +20,25 @@ const featuredGames = [
     title: 'God of War',
     image: GodOfWarCover,
     banner: GodOfWarBanner,
-    price: 1.99,
+    price: 39.99,
     description:
-      'Embark on your path of revenge and master the devastating techniques of Pak Mei Kung Fu.',
+      'His vengeance against the Gods of Olympus years behind him, Kratos now lives as a man in the realm of Norse Gods and monsters.',
   },
   {
-    title: 'Battlefront',
+    title: 'Star Wars Battlefront II',
     image: BattlefrontTwoCover,
     banner: BattlefrontTwoBanner,
-    price: 31.99,
+    price: 34.99,
     description:
-      'Embark on your path of revenge and master the devastating techniques of Pak Mei Kung Fu.',
+      'Put your mastery of the blaster, lightsaber, and the Force to the test online and offline in STAR WARS™ Battlefront™ II: Celebration Edition.',
   },
   {
     title: 'Dying Light 2 Stay Human',
     image: DyingLight2Cover,
     banner: DyingLight2Banner,
-    price: 31.99,
+    price: 54.99,
     description:
-      'Embark on your path of revenge and master the devastating techniques of Pak Mei Kung Fu.',
+      'The virus won and civilization has fallen back to the Dark Ages. The City, one of the last human settlements, is on the brink of collapse.',
   },
   {
     title: 'Sifu - EGS Exclusive',
@@ -54,15 +54,15 @@ const featuredGames = [
     banner: EvilDeadBanner,
     price: 31.99,
     description:
-      'Embark on your path of revenge and master the devastating techniques of Pak Mei Kung Fu.',
+      'Step into the shoes of Ash Williams or his friends from the iconic Evil Dead franchise and work together in a game loaded with over-the-top co-op and PVP multiplayer action!',
   },
   {
     title: 'Total War: WARHAMMER III',
     image: WarhammerCover,
     banner: WarhammerBanner,
-    price: 31.99,
+    price: 49.99,
     description:
-      'Embark on your path of revenge and master the devastating techniques of Pak Mei Kung Fu.',
+      'Rally your forces and step into the Realm of Chaos, a dimension of mind-bending horror where the very fate of the world will be decided.',
   },
 ]
 
