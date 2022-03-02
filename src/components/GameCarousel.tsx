@@ -31,18 +31,11 @@ const GameCarousel: React.FunctionComponent<GameCarouselProps> = ({
     <div className="space-y-4">
       <CarouselHeader title={title} />
       <div className="flex space-x-3 xl:space-x-6 2xl:space-x-9">
-        <div className="relative overflow-hidden rounded-lg group basis-1/5">
-          <Image
-            src={Battlefront}
-            alt="Quick launch game image"
-            layout="responsive"
-          />
-          <div className="absolute inset-0 hidden bg-white group-hover:block bg-opacity-10">
-            <button className="absolute text-3xl right-3 top-3">
-              <AiOutlinePlusCircle />
-            </button>
-          </div>
-        </div>
+        <Game />
+        <Game />
+        <Game />
+        <Game />
+        <Game />
       </div>
     </div>
   )
@@ -82,6 +75,41 @@ const CarouselHeader: React.FunctionComponent<{ title?: string }> = ({
         </div>
       </div>
     </>
+  )
+}
+
+const Game: React.FunctionComponent<{
+  picture?: string
+  salePrice?: number
+  price?: number
+}> = ({ salePrice = 0.83, price = 11.99 }) => {
+  return (
+    <article className="flex flex-col justify-between w-40 space-y-3 text-xs xl:text-sm 2xl:text-base basis-1/5">
+      <div className="relative overflow-hidden rounded-lg group">
+        <Image
+          src={Battlefront}
+          alt="Quick launch game image"
+          layout="responsive"
+        />
+        <div className="absolute inset-0 transition-opacity bg-white opacity-0 group-hover:opacity-100 bg-opacity-10">
+          <button className="absolute text-3xl right-3 top-3">
+            <AiOutlinePlusCircle />
+          </button>
+        </div>
+      </div>
+      <h6 className="w-full truncate">Battlefront II</h6>
+      <div className="flex items-center space-x-3">
+        {salePrice && (
+          <>
+            <p className="h-full p-1.5 rounded-md bg-accent-500">
+              -{Math.round(((price - salePrice) / price) * 100)}%
+            </p>
+            <p className="line-through text-primary-300">£{price}</p>
+          </>
+        )}
+        <p className="">£{salePrice ? salePrice : price}</p>
+      </div>
+    </article>
   )
 }
 
