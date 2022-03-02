@@ -2,6 +2,8 @@ import { motion } from 'framer-motion'
 import React from 'react'
 import { BiChevronRight } from 'react-icons/bi'
 
+import ArrowButton from './buttons/ArrowButton'
+
 interface GameCarouselProps {
   games?: string
 }
@@ -20,7 +22,7 @@ const activeLink = {
 const GameCarousel: React.FunctionComponent<GameCarouselProps> = () => {
   return (
     <>
-      <div className="flex justify-between">
+      <div className="flex items-center justify-between">
         <motion.h2
           className="flex text-xl font-medium"
           whileHover="active"
@@ -43,7 +45,10 @@ const GameCarousel: React.FunctionComponent<GameCarouselProps> = () => {
             <BiChevronRight />
           </motion.div>
         </motion.h2>
-        <div>arrows</div>
+        <div className="space-x-3">
+          <ArrowButton flipped={true} />
+          <ArrowButton />
+        </div>
       </div>
     </>
   )
