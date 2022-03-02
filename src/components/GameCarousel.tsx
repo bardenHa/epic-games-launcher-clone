@@ -48,7 +48,7 @@ const CarouselHeader: React.FunctionComponent<{ title?: string }> = ({
     <>
       <div className="flex items-center justify-between">
         <motion.h2
-          className="flex text-xl font-medium"
+          className="flex text-base font-medium md:text-xl"
           whileHover="active"
           initial="rest"
           animate="rest"
@@ -84,7 +84,7 @@ const Game: React.FunctionComponent<{
   price?: number
 }> = ({ salePrice = 0.83, price = 11.99 }) => {
   return (
-    <article className="flex flex-col justify-between space-y-3 text-xs lg:w-40 xl:text-sm 2xl:text-base basis-1/5">
+    <article className="flex flex-col justify-between w-32 space-y-3 text-[0.6rem] md:text-xs lg:w-40 xl:text-sm 2xl:text-base basis-1/5">
       <div className="relative overflow-hidden rounded-lg group">
         <Image
           src={Battlefront}
@@ -98,7 +98,7 @@ const Game: React.FunctionComponent<{
         </div>
       </div>
       <h6 className="truncate">Battlefront II</h6>
-      <div className="flex items-center space-x-3">
+      <div className="flex items-center space-x-1 md:space-x-3">
         {salePrice && (
           <>
             <p className="h-full p-1.5 rounded-md bg-accent-500">
