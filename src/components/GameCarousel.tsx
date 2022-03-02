@@ -30,7 +30,7 @@ const GameCarousel: React.FunctionComponent<GameCarouselProps> = ({
   return (
     <div className="space-y-4">
       <CarouselHeader title={title} />
-      <div className="flex space-x-3 xl:space-x-6 2xl:space-x-9">
+      <div className="flex pb-2 space-x-3 overflow-x-auto xl:space-x-6 2xl:space-x-9">
         <Game />
         <Game />
         <Game />
@@ -84,7 +84,7 @@ const Game: React.FunctionComponent<{
   price?: number
 }> = ({ salePrice = 0.83, price = 11.99 }) => {
   return (
-    <article className="flex flex-col justify-between w-40 space-y-3 text-xs xl:text-sm 2xl:text-base basis-1/5">
+    <article className="flex flex-col justify-between space-y-3 text-xs lg:w-40 xl:text-sm 2xl:text-base basis-1/5">
       <div className="relative overflow-hidden rounded-lg group">
         <Image
           src={Battlefront}
@@ -97,7 +97,7 @@ const Game: React.FunctionComponent<{
           </button>
         </div>
       </div>
-      <h6 className="w-full truncate">Battlefront II</h6>
+      <h6 className="truncate">Battlefront II</h6>
       <div className="flex items-center space-x-3">
         {salePrice && (
           <>
