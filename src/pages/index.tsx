@@ -71,7 +71,7 @@ const Store: NextPage = () => {
   return (
     <main className="w-full space-y-8 bg-primary-700 min-h-main">
       <BannerHero featuredGames={featuredGames} />
-      <GameCarousel />
+      <GameCarousel title="Games on Sale" />
     </main>
   )
 }
