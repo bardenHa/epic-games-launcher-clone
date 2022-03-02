@@ -14,7 +14,7 @@ const Header: React.FunctionComponent = () => {
         className="flex items-center justify-between w-full h-full"
       >
         <div className="flex items-center flex-auto">
-          <MdOutlineKeyboardArrowLeft className="mx-1 text-2xl text-primary-200 active:text-primary-150" />
+          <MdOutlineKeyboardArrowLeft className="mx-1 text-2xl cursor-pointer text-primary-200 active:text-primary-150" />
           <SearchBar
             placeholder="Search"
             className="hidden mx-2 w-44 md:flex"
@@ -43,7 +43,7 @@ const Header: React.FunctionComponent = () => {
               Cart
             </Button>
           </div>
-          <div className="flex items-center px-6 space-x-4 border-l border-primary-500">
+          <div className="flex items-center pl-6 space-x-4 border-l border-primary-500">
             <FriendListButton />
             <ProfileButton />
           </div>
