@@ -18,7 +18,7 @@ const Sidebar: React.FunctionComponent = () => {
   return (
     <nav
       aria-label="Primary"
-      className="sticky top-0 z-10 flex-col hidden h-full px-4 xl:w-72 2xl:w-96 min-w-max bg-primary-700 md:flex"
+      className="sticky top-0 z-10 flex-col hidden h-full px-4 xl:w-72 2xl:w-96 min-w-max bg-primary-700 lg:flex"
     >
       <div className="flex items-center justify-center text-4xl h-header fill-primary-150">
         <EpicGamesLogo />
