@@ -8,7 +8,7 @@ import SearchBar from '@/components/SearchBar'
 
 const Header: React.FunctionComponent = () => {
   return (
-    <header className="sticky top-0 w-full h-header bg-primary-700">
+    <header className="sticky top-0 z-40 w-full h-header bg-primary-700">
       <nav
         aria-label="Secondary"
         className="flex items-center justify-between w-full h-full"
