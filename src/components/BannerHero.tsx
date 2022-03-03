@@ -110,26 +110,28 @@ const BannerSlider: React.FunctionComponent<{
       className="relative flex-auto overflow-hidden cursor-pointer h-min rounded-2xl"
     >
       <Image src={image} alt="featured game banner" layout="responsive" />
-      <div className="absolute flex flex-col justify-end inset-8">
+      <div className="absolute flex flex-col justify-end inset-4 sm:inset-8">
         <div className="max-w-sm pr-8">
-          <h4 className="text-xs font-medium">NOW AVAILABLE</h4>
-          <p className="pt-2 font-semibold tracking-wide">{description}</p>
+          <h4 className="text-xs font-medium leading-none">NOW AVAILABLE</h4>
+          <p className="hidden pt-2 text-xs font-semibold tracking-wide sm:block md:text-base">
+            {description}
+          </p>
           <p className="pt-2 text-xs">
             Starting at{' '}
-            <span className="text-base font-semibold align-text-top">
+            <span className="text-xs font-semibold align-text-top md:text-base">
               £{price}
             </span>
           </p>
           <div className="flex pt-2 space-x-3">
             <Button
               variant="light"
-              className="items-center w-40 py-3 text-[0.7rem] border-0"
+              className="items-center w-28 sm:w-40 p-1 sm:py-3 text-[0.7rem] border-0"
             >
               BUY NOW
             </Button>
             <Button
               variant="ghost"
-              className="w-40 py-3 hover:bg-primary-100 hover:bg-opacity-10 text-[0.7rem] border-transparent"
+              className="w-32 sm:w-40 p-1 sm:py-3 hover:bg-primary-100 hover:bg-opacity-10 text-[0.7rem] border-transparent"
             >
               <AiOutlinePlusCircle className="mr-1 text-2xl" />
               Add to wishlist
