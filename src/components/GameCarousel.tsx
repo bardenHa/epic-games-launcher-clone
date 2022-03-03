@@ -23,12 +23,12 @@ const activeLink = {
     transition: { duration: 0.15, type: 'tween', ease: 'easeInOut' },
   },
 }
-//md:w-32 xl:w-9 2xl:w-10
+
 const GameCarousel: React.FunctionComponent<GameCarouselProps> = ({
   title,
 }) => {
   return (
-    <div className="space-y-4">
+    <section className="space-y-4">
       <CarouselHeader title={title} />
       <div className="flex pb-2 space-x-3 overflow-x-auto xl:space-x-6 2xl:space-x-9">
         <Game />
@@ -37,7 +37,7 @@ const GameCarousel: React.FunctionComponent<GameCarouselProps> = ({
         <Game />
         <Game />
       </div>
-    </div>
+    </section>
   )
 }
 

@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 
 import BannerHero from '@/components/BannerHero'
 import GameCarousel from '@/components/GameCarousel'
+import GameHero from '@/components/GameHero'
 
 import BattlefrontTwoBanner from '~/images/banners/battlefront.jpg'
 import DyingLight2Banner from '~/images/banners/dyinglight2.jpg'
@@ -69,9 +70,23 @@ const featuredGames = [
 
 const Store: NextPage = () => {
   return (
-    <main className="w-full space-y-8 bg-primary-700 min-h-main">
+    <main className="w-full mb-3 space-y-8 bg-primary-700 min-h-main">
       <BannerHero featuredGames={featuredGames} />
       <GameCarousel title="Games on Sale" />
+      <section className="flex flex-col space-y-8 sm:flex-row sm:space-y-0 sm:space-x-6 md:space-x-8">
+        <GameHero
+          title="Assassin's Creed Valhalla Sale"
+          description="Enjoy legendary savings of up to 60% on Assassin's Creed Valhalla during this limited time sale."
+          className="sm:w-1/2"
+          bannerImage={SifuBanner}
+        />
+        <GameHero
+          title="Assassin's Creed Valhalla Sale"
+          description="Enjoy legendary savings of up to 60% on Assassin's Creed Valhalla during this limited time sale."
+          className="sm:w-1/2"
+          bannerImage={SifuBanner}
+        />
+      </section>
     </main>
   )
 }
