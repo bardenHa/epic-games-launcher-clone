@@ -109,7 +109,12 @@ const BannerSlider: React.FunctionComponent<{
       animate="active"
       className="relative flex-auto overflow-hidden cursor-pointer h-min rounded-2xl"
     >
-      <Image src={image} alt="featured game banner" layout="responsive" />
+      <Image
+        src={image}
+        alt="featured game banner"
+        layout="responsive"
+        priority={true}
+      />
       <div className="absolute flex flex-col justify-end inset-4 sm:inset-8">
         <div className="max-w-sm pr-8">
           <h4 className="text-xs font-medium leading-none">NOW AVAILABLE</h4>
