@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import Head from 'next/head'
 
 import BannerHero from '@/components/BannerHero'
 import GameCarousel from '@/components/GameCarousel'
@@ -70,24 +71,29 @@ const featuredGames = [
 
 const Store: NextPage = () => {
   return (
-    <main className="w-full mb-3 space-y-8 bg-primary-700 min-h-main">
-      <BannerHero featuredGames={featuredGames} />
-      <GameCarousel title="Games on Sale" />
-      <section className="flex flex-col space-y-8 sm:flex-row sm:space-y-0 sm:space-x-6 md:space-x-8">
-        <GameHero
-          title="Assassin's Creed Valhalla Sale"
-          description="Enjoy legendary savings of up to 60% on Assassin's Creed Valhalla during this limited time sale."
-          className="sm:w-1/2"
-          bannerImage={SifuBanner}
-        />
-        <GameHero
-          title="Assassin's Creed Valhalla Sale"
-          description="Enjoy legendary savings of up to 60% on Assassin's Creed Valhalla during this limited time sale."
-          className="sm:w-1/2"
-          bannerImage={SifuBanner}
-        />
-      </section>
-    </main>
+    <>
+      <Head>
+        <title>Epic Games Launcher</title>
+      </Head>
+      <main className="w-full mb-3 space-y-8 bg-primary-700 min-h-main">
+        <BannerHero featuredGames={featuredGames} />
+        <GameCarousel title="Games on Sale" />
+        <section className="flex flex-col space-y-8 sm:flex-row sm:space-y-0 sm:space-x-6 md:space-x-8">
+          <GameHero
+            title="Assassin's Creed Valhalla Sale"
+            description="Enjoy legendary savings of up to 60% on Assassin's Creed Valhalla during this limited time sale."
+            className="sm:w-1/2"
+            bannerImage={SifuBanner}
+          />
+          <GameHero
+            title="Assassin's Creed Valhalla Sale"
+            description="Enjoy legendary savings of up to 60% on Assassin's Creed Valhalla during this limited time sale."
+            className="sm:w-1/2"
+            bannerImage={SifuBanner}
+          />
+        </section>
+      </main>
+    </>
   )
 }
 

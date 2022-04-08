@@ -113,7 +113,8 @@ const BannerSlider: React.FunctionComponent<{
         src={image}
         alt="featured game banner"
         layout="responsive"
-        priority={true}
+        loading="eager"
+        placeholder="blur"
       />
       <div className="absolute flex flex-col justify-end inset-4 sm:inset-8">
         <div className="max-w-sm pr-8">
