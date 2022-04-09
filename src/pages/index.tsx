@@ -92,6 +92,7 @@ const Store: NextPage = () => {
             bannerImage={SifuBanner}
           />
         </section>
+        <section></section>
       </main>
     </>
   )
