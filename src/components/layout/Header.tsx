@@ -1,3 +1,4 @@
+import { HiMenu } from 'react-icons/hi'
 import { MdOutlineKeyboardArrowLeft } from 'react-icons/md'
 
 import Button from '@/components/buttons/Button'
@@ -6,7 +7,9 @@ import FriendListButton from '@/components/buttons/FriendListButton'
 import ProfileButton from '@/components/buttons/ProfileButton'
 import SearchBar from '@/components/SearchBar'
 
-const Header: React.FunctionComponent = () => {
+const Header: React.FunctionComponent<{ toggleSidebar: () => void }> = ({
+  toggleSidebar,
+}) => {
   return (
     <header className="sticky top-0 z-40 w-full h-header bg-primary-700">
       <nav
@@ -14,7 +17,11 @@ const Header: React.FunctionComponent = () => {
         className="flex items-center justify-between w-full h-full"
       >
         <div className="flex items-center flex-auto">
-          <MdOutlineKeyboardArrowLeft className="mx-1 text-2xl cursor-pointer text-primary-200 active:text-primary-150" />
+          <MdOutlineKeyboardArrowLeft className="hidden mx-1 text-2xl cursor-pointer md:block text-primary-200 active:text-primary-150" />
+          <HiMenu
+            onClick={toggleSidebar}
+            className="mx-1 text-2xl cursor-pointer md:hidden text-primary-200 active:text-primary-150"
+          />
           <SearchBar
             placeholder="Search"
             className="hidden mx-2 w-44 md:flex"

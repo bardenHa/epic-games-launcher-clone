@@ -109,7 +109,7 @@ const NavigationButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
             </div>
           )}
           {game && (
-            <div className="mr-3.5 overflow-hidden rounded-md w-7 md:w-8 xl:w-9 2xl:w-10 xl:mr-4 2xl:mr-5">
+            <div className="mr-3.5 hidden md:block overflow-hidden rounded-md w-7 md:w-8 xl:w-9 2xl:w-10 xl:mr-4 2xl:mr-5">
               <Image
                 src={game}
                 alt="Quick launch game image"
